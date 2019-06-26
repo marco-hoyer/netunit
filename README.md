@@ -13,9 +13,15 @@ Writing a testsuite can help to have a good amount of confidence on firewall cha
 
     python setup.py -r requirements.txt
 
-# Installation
+### Installation
 
     python setup.py install
+    
+# Upload to PyPi
+
+Run from project root:
+
+    ./publish.sh 
 
 # Usage
 

@@ -22,15 +22,14 @@ def tcp_probe(interface: ip_interface, destination_ip: ip_address, port: int) ->
         sock.close()
 
 
-def get_local_ips() -> [ip_interface]:
+def local_ips() -> [ip_interface]:
     addresses = map(lambda x: netifaces.ifaddresses(x), netifaces.interfaces())
     ips = [value[0]["addr"] for sublist in addresses for key, value in sublist.items() if key == 2]
-
     return list(map(lambda x: ip_interface(x), ips))
 
 
-def get_interface_for_network(network: ip_network) -> ip_interface:
-    for interface in get_local_ips():
+def get_interface(network: ip_network) -> ip_interface:
+    for interface in local_ips():
         if interface in network:
             return interface
 
@@ -45,7 +44,7 @@ class NetworkTestCase(TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.interface_ip = get_interface_for_network(cls.network)
+        cls.interface_ip = get_interface(cls.network)
 
     def assertReachable(self, ip: ip_address, port: int):
         if not self.interface_ip:
