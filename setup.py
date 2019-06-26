@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='netunit',
-      version='0.1',
+      version='0.2',
       description='Network testing framework',
       long_description=long_description,
       author='Marco Hoyer',
