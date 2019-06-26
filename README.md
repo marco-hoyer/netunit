@@ -9,6 +9,10 @@ Writing a testsuite can help to have a good amount of confidence on firewall cha
 
 # Local run
 
+### install dev dependencies
+
+    python setup.py -r requirements-dev.txt
+
 ### install dependencies
 
     python setup.py -r requirements.txt

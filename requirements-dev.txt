@@ -1,3 +1,1 @@
-netifaces==0.10.9
-nose2==0.9.1
-unittest2==1.1.0
+twine==1.13.0
