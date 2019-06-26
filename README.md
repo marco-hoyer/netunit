@@ -28,17 +28,15 @@ Run from project root:
     ./publish.sh 
 
 # Usage
-
-```python
-from netunit import NetworkTestCase
-from ipaddress import ip_network
-
-class MyNetworkTests(NetworkTestCase):
-    network = ip_network("192.168.179.0/24")
     
-    def test_router_webinterface_access(self):
-        self.assertReachable(ip_address("192.168.178.1"), 443)
-
-    def test_switching_hardware_access(self):
-        self.assertNotReachable(ip_address("192.168.10.2"), 443)
-```
+    from netunit import NetworkTestCase
+    from ipaddress import ip_network
+    
+    class MyNetworkTests(NetworkTestCase):
+        network = ip_network("192.168.179.0/24")
+        
+        def test_router_webinterface_access(self):
+            self.assertReachable(ip_address("192.168.178.1"), 443)
+    
+        def test_switching_hardware_access(self):
+            self.assertNotReachable(ip_address("192.168.10.2"), 443)
