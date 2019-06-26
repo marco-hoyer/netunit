@@ -9,22 +9,19 @@ Writing a testsuite can help to have a good amount of confidence on firewall cha
 
 # Local run
 
-### install dev dependencies
-
-    python setup.py -r requirements-dev.txt
-
-### install dependencies
 
     python setup.py -r requirements.txt
-
-### Installation
-
     python setup.py install
+
+# Installation
+
+    pip install netunit
     
 # Upload to PyPi
 
 Run from project root:
 
+    python setup.py -r requirements-dev.txt
     ./publish.sh 
 
 # Usage
