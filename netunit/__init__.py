@@ -48,8 +48,6 @@ class NetworkTestCase(TestCase):
     def _is_reachable(self, ip: ip_address, port: int) -> bool:
         if not self.interface_ip:
             self.skipTest("no interface found in this network")
-        if ip not in self.network:
-            self.skipTest("destination ip '{}' does not belong to tested network '{}'".format(ip, self.network))
 
         return _tcp_probe(self.interface_ip, ip, port)
 
