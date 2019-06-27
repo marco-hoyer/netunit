@@ -7,7 +7,7 @@ except FileNotFoundError:
     long_description = ""
 
 setup(name="netunit",
-      version="0.2.1",
+      version="0.2.2",
       description="Network testing framework",
       long_description=long_description,
       long_description_content_type='text/markdown',
