@@ -44,6 +44,7 @@ class NetworkTestCase(TestCase):
     @classmethod
     def setUpClass(cls):
         cls.interface_ip = _get_interface(cls.network)
+        print("Executing tests for {} using interface {}".format(cls.network, cls.interface_ip))
 
     def _is_reachable(self, ip: ip_address, port: int) -> bool:
         if not self.interface_ip:
